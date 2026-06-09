@@ -17,13 +17,7 @@ This project was developed collaboratively by a team of 3 members.
 *   **[Teammate 2 Name] (Backend Developer)**
     *   *Responsibilities:* Setting up Express server, creating Mongoose models, and writing basic CRUD endpoints for resources.
 
-## 🖼️ Screenshots
 
-### Login Interface
-![Login Page](screenshots/login.png)
-
-### Student Dashboard
-![Student Dashboard](screenshots/dashboard.png)
 
 ## 🚀 Features
 *   **Role-Based Access Control (RBAC):** Distinct dashboards and routing for `Students` and `Admins`.

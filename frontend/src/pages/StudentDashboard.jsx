@@ -22,13 +22,12 @@ const StudentDashboard = () => {
   }, []);
   return (
     <div className="space-y-12">
-      {}
       <div className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 rounded-[2rem] p-10 sm:p-14 text-white shadow-2xl">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white opacity-5 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500 opacity-20 blur-3xl"></div>
         <div className="relative z-10">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight leading-tight">
-            Welcome back, <span className="text-indigo-300">{user?.name}</span>! 👋
+            Welcome back, <span className="text-indigo-300">{user?.name}</span>!
           </h1>
           <p className="text-indigo-100/80 text-lg sm:text-xl max-w-2xl font-light">
             Ready to build something amazing? Find and book the resources you need for your next big project.
@@ -43,7 +42,6 @@ const StudentDashboard = () => {
           </div>
         </div>
       </div>
-      {}
       <div>
         <div className="flex items-center gap-2 mb-4">
           <Zap className="w-6 h-6 text-yellow-500" />
