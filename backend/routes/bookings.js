@@ -156,4 +156,22 @@ router.get('/resource/:resourceId', authMiddleware, async (req, res) => {
   }
 });
 
+router.delete('/:id', authMiddleware, async (req, res) => {
+  try {
+    const booking = await Booking.findById(req.params.id);
+    if (!booking) return res.status(404).json({ message: 'Booking not found' });
+    
+    // Ensure the user owns the booking OR the user is an admin
+    if (booking.userId.toString() !== req.user.id && req.user.role !== 'admin') {
+      return res.status(403).json({ message: 'Not authorized to delete this booking' });
+    }
+    
+    await Booking.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Booking cancelled successfully' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;
