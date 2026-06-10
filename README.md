@@ -12,9 +12,9 @@ This project was developed collaboratively by a team of 3 members.
 
 *   **Neeraj Thakur (Full-Stack Developer)**
     *   *Responsibilities:* Core Backend API integration, JWT Security implementation, React State Management (Context API), and MongoDB Schema Design.
-*   **[Teammate 1 Name] (Frontend Developer)**
+*   **Frontend Developer**
     *   *Responsibilities:* UI/UX design, building React components, implementing Tailwind CSS (Glassmorphism, responsive layouts), and Frontend routing.
-*   **[Teammate 2 Name] (Backend Developer)**
+*   **Backend Developer**
     *   *Responsibilities:* Setting up Express server, writing robust CRUD endpoints, Booking overlap algorithm logic, and Role-Based Access Control (RBAC) validations.
 
 
