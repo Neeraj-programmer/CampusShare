@@ -137,4 +137,41 @@ router.get('/fair-warning/:bookingId', authMiddleware, adminMiddleware, async (r
     res.status(500).send('Server error');
   }
 });
+router.get('/resource/:resourceId', authMiddleware, async (req, res) => {
+  try {
+    // Only fetch upcoming or today's bookings
+    const today = new Date().toISOString().split('T')[0];
+    const existingBookings = await Booking.find({
+      resourceId: req.params.resourceId,
+      status: { $in: ['Pending', 'Approved'] },
+      date: { $gte: today }
+    })
+    .select('date startTime endTime -_id')
+    .sort({ date: 1, startTime: 1 });
+    
+    res.json(existingBookings);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+router.delete('/:id', authMiddleware, async (req, res) => {
+  try {
+    const booking = await Booking.findById(req.params.id);
+    if (!booking) return res.status(404).json({ message: 'Booking not found' });
+    
+    // Ensure the user owns the booking OR the user is an admin
+    if (booking.userId.toString() !== req.user.id && req.user.role !== 'admin') {
+      return res.status(403).json({ message: 'Not authorized to delete this booking' });
+    }
+    
+    await Booking.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Booking cancelled successfully' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;

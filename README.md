@@ -11,11 +11,11 @@ A comprehensive MERN-stack web application designed to digitalize the booking an
 This project was developed collaboratively by a team of 3 members.
 
 *   **Neeraj Thakur (Team Lead & Full-Stack Integration)**
-    *   *Responsibilities:* System architecture design, database schema planning, core API integration, routing, JWT security implementation, and project management.
-*   **[Teammate 1 Name] (Frontend Developer)**
-    *   *Responsibilities:* UI/UX design, building React components, implementing Tailwind CSS (Glassmorphism, responsive layouts).
-*   **[Teammate 2 Name] (Backend Developer)**
-    *   *Responsibilities:* Setting up Express server, creating Mongoose models, and writing basic CRUD endpoints for resources.
+    *   *Responsibilities:* JWT security implementation, database schema design, and core booking overlap algorithm logic.
+*   **Garvit Goyal (Frontend Developer)**
+    *   *Responsibilities:* UI/UX design, building React components, and implementing Tailwind CSS (Glassmorphism, responsive layouts).
+*   **Uttam Tiwari (Backend Developer)**
+    *   *Responsibilities:* Setting up Express server, creating Mongoose models, routing, and writing basic CRUD endpoints for resources.
 
 
 
@@ -26,11 +26,7 @@ This project was developed collaboratively by a team of 3 members.
 *   **Accountability Protocol:** Mandatory Roll Number verification and Responsibility Agreement for students.
 *   **Admin Management:** Centralized control to Add/Delete resources and Approve/Reject bookings.
 
-## 📂 Project Architecture & Leadership Approach
-As the Team Lead, I utilized an Agile-inspired workflow to manage the project scope and ensure timely delivery:
-1.  **Phase 1 (Planning):** Designed the database schema and defined API contracts so frontend and backend could be developed in parallel.
-2.  **Phase 2 (Development):** Assigned UI tasks to the frontend dev and basic routes to the backend dev, while I focused on the complex integration (connecting React to Node) and security features (JWT, Admin Secret keys).
-3.  **Phase 3 (Review & Refactoring):** Conducted code reviews, optimized React state management (Context API), and polished the Tailwind CSS for a premium look.
+
 
 ## 🛠️ Installation & Setup
 

@@ -6,6 +6,7 @@ const BookResource = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [resource, setResource] = useState(null);
+  const [unavailableTimes, setUnavailableTimes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -18,8 +19,12 @@ const BookResource = () => {
   useEffect(() => {
     const fetchResource = async () => {
       try {
-        const res = await api.get(`/resources/${id}`);
-        setResource(res.data);
+        const [resResource, resBookings] = await Promise.all([
+          api.get(`/resources/${id}`),
+          api.get(`/bookings/resource/${id}`)
+        ]);
+        setResource(resResource.data);
+        setUnavailableTimes(resBookings.data);
       } catch (err) {
         setError('Resource not found');
       } finally {
@@ -69,6 +74,20 @@ const BookResource = () => {
               <p className="text-sm mt-1"><strong>Location:</strong> {resource.location} | <strong>Condition:</strong> {resource.condition}</p>
             </div>
           </div>
+          
+          {unavailableTimes.length > 0 && (
+            <div className="bg-red-50 text-red-800 p-4 rounded-lg mb-6 border border-red-100">
+              <p className="font-bold mb-2 flex items-center gap-1"><Clock className="w-4 h-4" /> Already Booked Times:</p>
+              <ul className="list-disc pl-5 space-y-1 text-sm">
+                {unavailableTimes.map((b, i) => (
+                  <li key={i}>
+                    <strong>{b.date}</strong> : {b.startTime} to {b.endTime}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && <div className="bg-red-50 text-red-500 p-3 rounded-md text-sm border border-red-100">{error}</div>}
             {success && <div className="bg-green-50 text-green-600 p-3 rounded-md text-sm border border-green-100">{success}</div>}

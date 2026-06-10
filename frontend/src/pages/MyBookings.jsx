@@ -17,6 +17,17 @@ const MyBookings = () => {
     };
     fetchBookings();
   }, []);
+
+  const handleCancel = async (id) => {
+    if(window.confirm('Are you sure you want to cancel this booking?')) {
+      try {
+        await api.delete(`/bookings/${id}`);
+        setBookings(bookings.filter(b => b._id !== id));
+      } catch (err) {
+        alert('Failed to cancel booking');
+      }
+    }
+  };
   const getStatusBadge = (status) => {
     switch(status) {
       case 'Approved': return <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Approved</span>;
@@ -57,8 +68,16 @@ const MyBookings = () => {
                       <span className="flex items-center gap-1 font-medium"><Clock className="w-4 h-4 text-gray-400" /> {booking.startTime} - {booking.endTime}</span>
                     </div>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex flex-col items-end gap-2">
                     {getStatusBadge(booking.status)}
+                    {(booking.status === 'Pending' || booking.status === 'Approved') && (
+                      <button 
+                        onClick={() => handleCancel(booking._id)}
+                        className="text-xs text-red-600 hover:text-red-800 font-medium underline"
+                      >
+                        Cancel Request
+                      </button>
+                    )}
                   </div>
                 </div>
               </li>
