@@ -27,33 +27,33 @@ const Register = () => {
     }
   };
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
+    <div className="flex items-start justify-center">
+      <div className="max-w-md w-full bg-white border border-[#4F39F6] px-6 pb-4 rounded-3xl shadow-xl">
         <div>
-          <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="mt-3 text-center text-3xl font-extrabold text-gray-900 tracking-tight">
             Create an account
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">Join CampusShare today</p>
+          <p className="mb-3 text-center text-sm text-gray-600">Join CampusShare today</p>
         </div>
-        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+        <form className="space-y-3" onSubmit={handleSubmit}>
           {error && <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm border border-red-100 font-medium">{error}</div>}
-          <div className="space-y-4">
-            <input name="name" type="text" required className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Full Name" onChange={handleChange} />
-            <input name="email" type="email" required className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="College Email address" onChange={handleChange} />
-            <input name="password" type="password" required className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Password" onChange={handleChange} />
+          <div className="space-y-3">
+            <input name="name" type="text" required className="appearance-none block w-full px-2 py-2 border border-gray-400 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Full Name" onChange={handleChange} />
+            <input name="email" type="email" required className="appearance-none block w-full px-2 py-2 border border-gray-400 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="College Email address" onChange={handleChange} />
+            <input name="password" type="password" required className="appearance-none block w-full px-2 py-2 border border-gray-400 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Password" onChange={handleChange} />
             <div className="grid grid-cols-2 gap-4">
-              <input name="department" type="text" required className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Department (e.g. CSE)" onChange={handleChange} />
-              <input name="semester" type="number" min="1" max="8" required className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Semester (1-8)" onChange={handleChange} />
+              <input name="department" type="text" required className="appearance-none block w-full px-2 py-2 border border-gray-400 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Department (e.g. CSE)" onChange={handleChange} />
+              <input name="semester" type="number" min="1" max="8" required className="appearance-none block w-full px-2 py-2 border border-gray-400 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white" placeholder="Semester (1-8)" onChange={handleChange} />
             </div>
-            <select name="role" className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white cursor-pointer font-medium" onChange={handleChange}>
+            <select name="role" className="appearance-none block w-full px-2 py-2 border border-gray-400 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-gray-50 hover:bg-white cursor-pointer font-medium" onChange={handleChange}>
               <option value="student">Register as Student</option>
               <option value="admin">Register as Admin</option>
             </select>
             {formData.role === 'student' && (
-              <input name="rollNumber" type="text" required className="appearance-none block w-full px-4 py-3 border-2 border-indigo-100 rounded-xl text-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-indigo-50 placeholder-indigo-400" placeholder="College ID / Roll Number" onChange={handleChange} />
+              <input name="rollNumber" type="text" required className="appearance-none block w-full px-2 py-2 border-2 border-indigo-100 rounded-xl text-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all sm:text-sm bg-indigo-50 placeholder-indigo-400" placeholder="College ID / Roll Number" onChange={handleChange} />
             )}
             {formData.role === 'admin' && (
-              <input name="adminSecret" type="password" required className="appearance-none block w-full px-4 py-3 border-2 border-red-100 rounded-xl text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all sm:text-sm bg-red-50 placeholder-red-400" placeholder="Admin Secret Key (ADMIN123)" onChange={handleChange} />
+              <input name="adminSecret" type="password" required className="appearance-none block w-full px-2 py-2 border-2 border-red-100 rounded-xl text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all sm:text-sm bg-red-50 placeholder-red-400" placeholder="Admin Secret Key (ADMIN123)" onChange={handleChange} />
             )}
           </div>
           <div>

@@ -26,7 +26,7 @@ const MyBookings = () => {
     }
   };
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 min-h-[78vh]">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">My Bookings</h1>
         <p className="text-gray-500">Track the status of your resource requests</p>
@@ -40,7 +40,7 @@ const MyBookings = () => {
           <p className="text-gray-500">You haven't made any resource booking requests yet.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm border border-[#4F39F6] overflow-hidden">
           <ul className="divide-y divide-gray-100">
             {bookings.map(booking => (
               <li key={booking._id} className="p-6 hover:bg-gray-50 transition">

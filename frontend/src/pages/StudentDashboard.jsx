@@ -21,7 +21,7 @@ const StudentDashboard = () => {
     fetchIdleResources();
   }, []);
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 min-h-[78vh]">
       <div className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 rounded-[2rem] p-10 sm:p-14 text-white shadow-2xl">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white opacity-5 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500 opacity-20 blur-3xl"></div>
@@ -53,7 +53,7 @@ const StudentDashboard = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {idleResources.map(resource => (
-              <div key={resource._id} className="bg-white rounded-[1.5rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group hover:-translate-y-1">
+              <div key={resource._id} className="bg-white rounded-[1.5rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group hover:-translate-y-1 hover:border hover:border-[#4F39F6]">
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 p-6 border-b border-gray-100">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">{resource.resourceName}</h3>

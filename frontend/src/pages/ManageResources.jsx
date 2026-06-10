@@ -51,7 +51,7 @@ const ManageResources = () => {
     }
   };
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 min-h-[78vh]">
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Manage Resources</h1>

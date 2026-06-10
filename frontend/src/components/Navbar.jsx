@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6 font-medium text-sm">
             {user ? (
               <>
-                <span className="text-gray-500 hidden md:block">Hi, <span className="text-gray-900 font-bold">{user.name}</span></span>
+                <span className="text-black hidden md:block">Hi, <span className="text-gray-900 font-bold">{user.name}</span></span>
                 {user.role === 'student' && (
                   <>
                     <Link to="/student" className="flex items-center gap-1.5 text-gray-600 hover:text-indigo-600 transition-colors">

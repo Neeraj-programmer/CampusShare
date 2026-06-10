@@ -24,7 +24,7 @@ const BrowseResources = () => {
     r.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 min-h-[78vh]">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Browse Resources</h1>
@@ -48,7 +48,7 @@ const BrowseResources = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredResources.map(resource => (
-            <div key={resource._id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col">
+            <div key={resource._id} className="bg-white rounded-xl flex flex-col shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group hover:-translate-y-2 hover:border hover:border-[#4F39F6]">
               <div className="p-6 flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-gray-900">{resource.resourceName}</h3>
