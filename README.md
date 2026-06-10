@@ -10,11 +10,11 @@ A comprehensive MERN-stack web application designed to digitalize the booking an
 ## 👥 The Team
 This project was developed collaboratively by a team of 3 members.
 
-*   **Neeraj Thakur (Full-Stack Developer)**
+*   **Neeraj Thakur (Team Lead & Full-Stack Integration)**
     *   *Responsibilities:* Core Backend API integration, JWT Security implementation, React State Management (Context API), and MongoDB Schema Design.
-*   **Frontend Developer**
+*   **[Teammate 1 Name] (Frontend Developer)**
     *   *Responsibilities:* UI/UX design, building React components, implementing Tailwind CSS (Glassmorphism, responsive layouts), and Frontend routing.
-*   **Backend Developer**
+*   **[Teammate 2 Name] (Backend Developer)**
     *   *Responsibilities:* Setting up Express server, writing robust CRUD endpoints, Booking overlap algorithm logic, and Role-Based Access Control (RBAC) validations.
 
 
