@@ -137,4 +137,23 @@ router.get('/fair-warning/:bookingId', authMiddleware, adminMiddleware, async (r
     res.status(500).send('Server error');
   }
 });
+router.get('/resource/:resourceId', authMiddleware, async (req, res) => {
+  try {
+    // Only fetch upcoming or today's bookings
+    const today = new Date().toISOString().split('T')[0];
+    const existingBookings = await Booking.find({
+      resourceId: req.params.resourceId,
+      status: { $in: ['Pending', 'Approved'] },
+      date: { $gte: today }
+    })
+    .select('date startTime endTime -_id')
+    .sort({ date: 1, startTime: 1 });
+    
+    res.json(existingBookings);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;
